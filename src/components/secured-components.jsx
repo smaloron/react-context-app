@@ -10,8 +10,7 @@ export function SecuredHome () {
     return (
         <div>
             <button onClick={() => logout()}>Déconnexion</button>
-            <Link to="/login">Login</Link>
-            <Link to="/page">page</Link>
+
             <h1>Accueil Sécurisé pour {user}</h1>
         </div>
     )
