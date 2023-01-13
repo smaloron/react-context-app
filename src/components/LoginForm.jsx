@@ -1,9 +1,11 @@
 import { useContext, useState } from 'react'
+import { useNavigate } from 'react-router';
 import { AppContext } from '../context/AppContext';
 
 export default function LoginForm () {
     const [userName, setUserName] = useState('');
     const { login } = useContext(AppContext);
+    const navigate = useNavigate();
 
     function handleChange (ev) {
         setUserName(ev.target.value);
@@ -13,7 +15,8 @@ export default function LoginForm () {
         ev.preventDefault();
         if (userName.trim()) {
             login(userName);
-            setUserName("")
+            setUserName("");
+            navigate("/");
         }
     }
 
