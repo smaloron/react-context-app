@@ -1,17 +1,15 @@
-import { useState, createContext } from 'react'
+import { useState, createContext, useContext } from 'react'
 import './App.css'
-import GreetForm from './components/GreetForm';
-import Greeting from './components/GreetingComponent';
-import { AppContextProvider } from './context/AppContext';
+import Content from './components/Content';
+
+import { AppContext, AppContextProvider } from './context/AppContext';
 
 
 function App () {
-
   return (
     <div className="App">
       <AppContextProvider>
-        <Greeting />
-        <GreetForm />
+        <Content />
       </AppContextProvider>
     </div>
   )
