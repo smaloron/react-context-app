@@ -1,18 +1,18 @@
 import { useState, createContext } from 'react'
 import './App.css'
-import GreetForm from './GreetForm';
-import Greeting from './GreetingComponent';
+import GreetForm from './components/GreetForm';
+import Greeting from './components/GreetingComponent';
+import { AppContextProvider } from './context/AppContext';
 
-export const AppContext = createContext('');
 
 function App () {
-  const [greetWord, setGreetWord] = useState('Hello');
+
   return (
     <div className="App">
-      <AppContext.Provider value={{ greetWord, setGreetWord }}>
+      <AppContextProvider>
         <Greeting />
         <GreetForm />
-      </AppContext.Provider>
+      </AppContextProvider>
     </div>
   )
 }
